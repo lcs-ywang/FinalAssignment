@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-       
+        
         NavigationView{
             
             List{
@@ -80,16 +80,16 @@ struct ContentView: View {
                             Text("Figure it out whether Dine-in or Take-out")
                                 .font(.caption)
                                 .multilineTextAlignment(.leading)
-
+                            
+                        }
+                    }
+                    .padding()
+                    
+                }
+                
             }
-        }
-        .padding()
-
-    }
-        
-}
             .navigationBarTitle("LCS Meal")
-
+            
         }
         
     }

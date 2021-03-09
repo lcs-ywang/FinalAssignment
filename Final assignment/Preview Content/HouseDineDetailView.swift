@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct HouseDineDetailView: View {
-    var hosue:String = "Ryder"
+    @State var house:String = ""
     
     var body: some View {
         VStack{
             Form{
-                Section(header:Text("Ryder's Lunch")){
+                Section(header:Text("\(house)'s Lunch")){
                     Text("Type: ")
                     Text("Time: ")
                     Text("Place: ")
                 }
                 
-                Section(header: Text("Ryder's Dinner")){
+                Section(header: Text("\(house)'s Dinner")){
                     Text("Type: ")
                     Text("Time: ")
                     Text("Place: ")

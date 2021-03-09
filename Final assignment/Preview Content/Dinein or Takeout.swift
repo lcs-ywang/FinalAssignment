@@ -20,7 +20,7 @@ struct Dinein_or_Takeout: View {
                 ForEach(0..<houseList.count){ num in
                     
                     if text == "" || houseList[num].contains(text){ // if contain search bar text
-                        NavigationLink(destination: Text("SUCK MY PP")){
+                        NavigationLink(destination: HouseDineDetailView(house: houseList[num])){
                             Text(houseList[num])
                         }
                         
