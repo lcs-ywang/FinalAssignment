@@ -3,7 +3,6 @@
 //  SwiftUI-Chicago-HSE-LCS
 //
 //  Created by Russell Gordon on 2021-02-14.
-/
 //
 
 import SwiftUI

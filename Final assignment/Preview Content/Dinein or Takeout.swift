@@ -9,12 +9,19 @@ import SwiftUI
 
 struct Dinein_or_Takeout: View {
     @State private var text:String = ""
-    private var houseList:[String] = ["Ryder", "Lower", "Upper", "He"]
+    private var houseList:[String] = ["Ryder", "Lower", "Upper", "Matthew", "Cooper", "Rashleigh"]
     var body: some View {
         VStack{
+            Text("Dine in \nor Take out")
+            Divider()
+            SearchBarView(text: $text)
+            
             List{
                 ForEach(0..<houseList.count){ num in
-                    Text(houseList[num])
+                    
+                    if text == "" || houseList[num].contains(text){ // if contain search bar text
+                        Text(houseList[num])
+                    }
                 }
             }
             Spacer()
