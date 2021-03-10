@@ -20,9 +20,9 @@ struct HouseDineDetailView: View {
                 }
                 
                 Section(header: Text("\(house)'s Dinner")){
-                    Text("Type: ")
-                    Text("Time: ")
-                    Text("Place: ")
+                    Text("Type: \(dineInOrTakeOut(house: house).0)")
+                    Text("Time: \(getDineTime(house_: house))")
+                    Text("Place: \(dineInOrTakeOut(house: house).1)")
                 }
                 
             }
