@@ -19,6 +19,7 @@ func dineInOrTakeOut(house:String) -> (type:String, place:String){ // For the bo
     let timediff = diffComponents.day!
     
     if timediff % 2 == 0 &&  dineInHouse.contains(house){ // Dine in
+        // Need to consider the rotation that will happen every two weeks
         return (type:"Dine in", place: "Dining Hall")
     }else{ // Takeout
 
@@ -28,6 +29,7 @@ func dineInOrTakeOut(house:String) -> (type:String, place:String){ // For the bo
 
 func getDineTime(house_:String) -> String{  
     if earlyTime.contains(house_){
+        // Need to consider the rotation that will happen every two weeks
         return "5:45 - 6:15"
     } else{
         return "6:20 - 70"
