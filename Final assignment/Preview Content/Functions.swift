@@ -3,7 +3,7 @@ import Foundation
 
 // GLOBAL Constat variables
 let dineInHouse = ["Ryder", "Lower", "Wads"] // Dine in house in March Ten
-var earlyTime = ["Ryder", "Lower", "Wads"] // Early dinner in March Ten
+var earlyTime = ["Ryder", "Lower", "Wads", "Ondaatje", "Mattews", "Uplands"] // Early dinner in March Ten
 
 func dineInOrTakeOut(house:String) -> (type:String, place:String){ // For the border dinner
     var someDate = DateComponents() // March Ten Placeholder
