@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Dinein_or_Takeout: View {
     @State private var text:String = ""
-    private var houseList:[String] = ["Ryder", "Lower", "Upper", "Matthew", "Cooper", "Rashleigh", "Wads"]
+    private var houseList:[String] = ["Ryder", "Lower", "Upper", "Matthews", "Cooper", "Rashleigh", "Wads"]
     var body: some View {
         VStack{
             Text("Dine in \nor Take out")
