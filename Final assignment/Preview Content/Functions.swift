@@ -1,6 +1,9 @@
 import Foundation
 
 
+// GLOBAL Constat variables
+let dineInHouse = ["Ryder", "", ""]
+
 func dineInOrTakeOut(house:String) -> String{ // For the border dinner
     var someDate = DateComponents() // March Ten Placeholder
     someDate.month = 3
@@ -14,7 +17,6 @@ func dineInOrTakeOut(house:String) -> String{ // For the border dinner
     
     let timediff = diffComponents.day!
     
-    let dineInHouse = ["Ryder", "", ""]
     if timediff % 2 == 0 &&  dineInHouse.contains(house){ // Dine in
 
         return "Dine in";
