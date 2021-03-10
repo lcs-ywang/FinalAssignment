@@ -6,18 +6,16 @@ let dineInHouse = ["Ryder", "Lower", "Wads"] // Dine in house in March Ten
 var earlyTime = ["Ryder", "Lower", "Wads", "Ondaatje", "Matthews", "Uplands"] // Early dinner in March Ten
 
 func dineInOrTakeOut(house:String) -> (type:String, place:String){ // For the border dinner
-    var someDate = DateComponents() // March Ten Placeholder
-    someDate.month = 3
-    someDate.day = 10
-    someDate.hour = 12
-    someDate.minute = 0
-    let now = Date() // Today's Date
+    let date = "00:00 Wed, 10 Mar 2021"
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm E, d MMM y"
+    let marchTen = formatter.date(from: date) ?? Date() // March ten
+    let now = Date() // Today
     
-    let marchTen = Calendar.current.date(from: someDate)! // Define the date march ten
-    let diffComponents = Calendar.current.dateComponents([.hour, .minute, .second, .day], from: marchTen, to: now)
-    
-    let timediff = diffComponents.day!
-    
+    let diffComponents = now.timeIntervalSince(marchTen)
+    let timediff = Int(floor(diffComponents / 60 / 60) / 24)
+    print(timediff)
+
     if timediff % 2 == 0 &&  dineInHouse.contains(house){ // Dine in
         // Need to consider the rotation that will happen every two weeks
         return (type:"Dine in", place: "Dining Hall")
