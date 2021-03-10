@@ -17,6 +17,7 @@
 		3C97851325F70DE300A9F205 /* Dinein or Takeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C97851225F70DE300A9F205 /* Dinein or Takeout.swift */; };
 		3C97851625F711C800A9F205 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C97851525F711C800A9F205 /* SearchBarView.swift */; };
 		3C97851925F7142500A9F205 /* HouseDineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C97851825F7142500A9F205 /* HouseDineDetailView.swift */; };
+		3C97851C25F9553400A9F205 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C97851B25F9553400A9F205 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3C97851225F70DE300A9F205 /* Dinein or Takeout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dinein or Takeout.swift"; sourceTree = "<group>"; };
 		3C97851525F711C800A9F205 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		3C97851825F7142500A9F205 /* HouseDineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDineDetailView.swift; sourceTree = "<group>"; };
+		3C97851B25F9553400A9F205 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				3C97851225F70DE300A9F205 /* Dinein or Takeout.swift */,
 				3C97851525F711C800A9F205 /* SearchBarView.swift */,
 				3C97851825F7142500A9F205 /* HouseDineDetailView.swift */,
+				3C97851B25F9553400A9F205 /* Functions.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			files = (
 				3C9784F825F7081E00A9F205 /* ContentView.swift in Sources */,
 				3C97850625F70B3D00A9F205 /* Lunch.swift in Sources */,
+				3C97851C25F9553400A9F205 /* Functions.swift in Sources */,
 				3C97850C25F70C1700A9F205 /* Breakfast.swift in Sources */,
 				3C97851625F711C800A9F205 /* SearchBarView.swift in Sources */,
 				3C97851325F70DE300A9F205 /* Dinein or Takeout.swift in Sources */,
