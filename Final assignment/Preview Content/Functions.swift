@@ -5,7 +5,7 @@ import Foundation
 let dineInHouse = ["Ryder", "Lower", ""] // Dine in house in March Ten
 var earlyTime = ["Ryder", "Loewr", ""] // Early dinner in March Ten
 
-func dineInOrTakeOut(house:String) -> String{ // For the border dinner
+func dineInOrTakeOut(house:String) -> (type:String, place:String){ // For the border dinner
     var someDate = DateComponents() // March Ten Placeholder
     someDate.month = 3
     someDate.day = 10
@@ -19,15 +19,15 @@ func dineInOrTakeOut(house:String) -> String{ // For the border dinner
     let timediff = diffComponents.day!
     
     if timediff % 2 == 0 &&  dineInHouse.contains(house){ // Dine in
-        return "Dine in";
+        return (type:"Dine in", place: "Dining Hall")
     }else{ // Takeout
 
-        return "Take out";
+        return (type:"Takeout", place: house)
     }
 }
 
-func getDineTime(house:String) -> String{ //
-    if earlyTime.contains(house){
+func getDineTime(house_:String) -> String{ //
+    if earlyTime.contains(house_){
         return "5:45 - 6:15"
     } else{
         return "6:20 - 70"
