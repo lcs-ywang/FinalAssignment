@@ -14,9 +14,9 @@ struct HouseDineDetailView: View {
         VStack{
             Form{
                 Section(header:Text("\(house)'s Lunch")){
-                    Text("Type: ")
-                    Text("Time: ")
-                    Text("Place: ")
+                    Text("Type: \(dineInOrTakeOutLunch(house: house).0)")
+                    Text("Time: \(LunchTime(house_: house))")
+                    Text("Place: \(dineInOrTakeOutLunch(house: house).1)")
                 }
                 
                 Section(header: Text("\(house)'s Dinner")){
