@@ -33,7 +33,7 @@ func getDineTime(house_:String) -> String{
     let date = "00:00 Mon, 8 Mar 2021"
     let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm E, d MMM y"
-    let marchTen = formatter.date(from: date) ?? Date() // March ten
+    let marchTen = formatter.date(from: date) ?? Date() // March eight
     
     let now = Date() // Today
     
@@ -53,7 +53,7 @@ func getDineTime(house_:String) -> String{
     }else{
         
         if timediff % 2 == 0 { // Week A
-            return "6:20 - 7:00"
+            return "5:45 - 6:15"
         }else{ // Week B
             return "6:20 - 7:00"
         }
@@ -74,10 +74,30 @@ func dineInOrTakeOutLunch(house:String) -> (type:String, place:String){ // For t
 }
 
 func LunchTime(house_:String) -> String{
+    let date = "00:00 Mon, 8 Mar 2021"
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm E, d MMM y"
+    let marchTen = formatter.date(from: date) ?? Date() // March eight
+    
+    let now = Date() // Today
+    
+    let diffComponents = now.timeIntervalSince(marchTen)
+    let timediff = Int(floor(diffComponents / 60 / 60) / 24 / 14)
     if earlyTime.contains(house_){
-        // Need to consider the rotation that will happen every two weeks
-        return "12:30 - 1:00"
-    } else{
-        return "1:30 - 2:00"
+        if timediff % 2 == 0{ // Week A
+            
+            return "12:30 - 1:00"
+        }else{ // Week B
+            
+            return "1:30 - 2:00"
+        }
+    
+    }else{
+        
+        if timediff % 2 == 0 { // Week A
+            return "12:30 - 1:00"
+        }else{ // Week B
+            return "1:30 - 2:00"
+        }
     }
 }
