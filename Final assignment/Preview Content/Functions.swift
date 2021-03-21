@@ -38,12 +38,12 @@ func getDineTime(house_:String) -> String{
     let now = Date() // Today
     
     let diffComponents = now.timeIntervalSince(marchTen)
-    let timediff = Int(floor(diffComponents / 60 / 60) / 24 / 14)
+    let timediff = Int(floor(diffComponents / 60 / 60) / 24 )
 
     if earlyTime.contains(house_){
         // Need to consider the rotation that will happen every two weeks
-        if timediff % 2 == 0{ // Week A
-            
+        if timediff / 14 % 2 == 0{ // Week A
+             
             return "5:45 - 6:15"
         }else{ // Week B
             
@@ -94,10 +94,13 @@ func LunchTime(house_:String) -> String{
     
     }else{
         
-        if timediff % 2 == 0 { // Week A
+        if timediff * 7 == 0 { // Week A
             return "12:30 - 1:00"
         }else{ // Week B
             return "1:30 - 2:00"
         }
     }
 }
+
+
+

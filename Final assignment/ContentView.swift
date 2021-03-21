@@ -13,6 +13,23 @@ struct ContentView: View {
         NavigationView{
             
             List{
+                NavigationLink(destination: Breakfast()){
+                    HStack{
+                        
+                        Text("🥞")
+                            .font(.largeTitle)
+                        
+                        VStack(alignment: .leading){
+                            Text("Breakfast")
+                                .multilineTextAlignment(.leading)
+                            
+                            Text("The most significant meal for a day.")
+                                .font(.caption)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                    }
+                }
                 
                 NavigationLink(destination: Lunch()){
                     HStack{
@@ -50,23 +67,7 @@ struct ContentView: View {
                     }
                 }
                 
-                NavigationLink(destination: Breakfast()){
-                    HStack{
-                        
-                        Text("🥞")
-                            .font(.largeTitle)
-                        
-                        VStack(alignment: .leading){
-                            Text("Breakfast")
-                                .multilineTextAlignment(.leading)
-                            
-                            Text("The most significant meal for a day.")
-                                .font(.caption)
-                                .multilineTextAlignment(.leading)
-                            
-                        }
-                    }
-                }
+               
                 NavigationLink(destination: Dinein_or_Takeout()){
                     HStack{
                         

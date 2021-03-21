@@ -10,9 +10,17 @@ import SwiftUI
 struct HouseDineDetailView: View {
     @State var house:String = ""
     
+    
     var body: some View {
         VStack{
             Form{
+                
+                
+                Section(header:Text("\(house)'s Breakfast")){
+                    Text("Type: \(dineInOrTakeOutLunch(house: house).0)")
+                    Text("Time: \(LunchTime(house_: house))")
+                    Text("Place: \(dineInOrTakeOutLunch(house: house).1)")
+                }
                 Section(header:Text("\(house)'s Lunch")){
                     Text("Type: \(dineInOrTakeOutLunch(house: house).0)")
                     Text("Time: \(LunchTime(house_: house))")
@@ -27,6 +35,10 @@ struct HouseDineDetailView: View {
                 
             }
         }
+    }
+    
+    func grabData(){
+        
     }
 }
 
