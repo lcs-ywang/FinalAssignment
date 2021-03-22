@@ -9,9 +9,10 @@ import SwiftUI
 
 struct HouseDineDetailView: View {
     @State var house:String = ""
+    @State private var info:Times?
     
-    
-    var body: some View {
+        var body: some View {
+
         VStack{
             Form{
                 
@@ -34,13 +35,14 @@ struct HouseDineDetailView: View {
                 }
                 
             }
+            
         }
     }
-    
-    func grabData(){
-        
-    }
 }
+
+        
+    
+    
 
 struct HouseDineDetailView_Previews: PreviewProvider {
     static var previews: some View {

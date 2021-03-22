@@ -1,16 +1,18 @@
 //
-//  store.swift
-//  Final assignment
+//  Store.swift
+//  CourseSelectionAssistant (iOS)
 //
-//  Created by Yining Wang on 2021-03-19.
+//  Created by Russell Gordon on 2021-03-17.
 //
+
 import Foundation
 
+// The purpose of this class is to kick of the initialization of the list of courses obtained from the JSON endpoint
 class Store: ObservableObject {
     
     // MARK: Stored properties
-    @Published var MealSchedule = Times()
-    @Published var house = [String : [Time]]()
+    @Published var DineSchedule = Times()
+    @Published var Houses = [String : [Time]]()
     
     // MARK: Initializer
     init(loadFromRemote: Bool = true) {
@@ -44,7 +46,7 @@ class Store: ObservableObject {
                 do {
                     
                     // Attempt to decode the JSON into an instance of the Courses structure
-                    let decodedMealSchedule = try JSONDecoder().decode(Times.self, from: dataFromSheety)
+                    let decodeTimes = try JSONDecoder().decode(Times.self, from: dataFromSheety)
                     
                     // Print a status message to the console
                     print("Course list summary decoded from JSON from Sheety API endpoint successfully")
@@ -53,10 +55,10 @@ class Store: ObservableObject {
                     DispatchQueue.main.async {
                         
                         // Set the list of courses that have been downloaded
-                        self.MealSchedule.list = decodedMealSchedule.list
+                        self.DineSchedule.list = decodeTimes.list
                         
                         // Create a dictionary with courses grouped by curriculum (subject)
-                        self.house = Dictionary(grouping: self.MealSchedule.list, by: { $0.house })
+                        self.Houses = Dictionary(grouping: self.DineSchedule.list, by: { $0.house })
                         
                     }
 
@@ -75,22 +77,21 @@ class Store: ObservableObject {
         } else {
             
             // Otherwise load from a local JSON file to save network traffic and usage of API
-            if let url = Bundle.main.url(forResource: "courses", withExtension: "json") {
+            if let url = Bundle.main.url(forResource: "Mealschedule", withExtension: "json") {
                 do {
                     
                     let dataFromAppBundle = try Data(contentsOf: url)
                     let decoder = JSONDecoder()
-                    let decodedMealSchedule = try decoder.decode(Times.self, from: dataFromAppBundle)
+                    let decodeTimes = try decoder.decode(Times.self, from: dataFromAppBundle)
                     
                     // Print a status message to the console
                     print("Course list summary decoded from JSON from app bundle successfully")
                     
                     // Update the list of courses in this data store
-                    self.MealSchedule.list = MealSchedule.list
+                    self.DineSchedule.list = decodeTimes.list
                     
                     // Create a dictionary with courses grouped by curriculum (subject)
-                    self.house = Dictionary(grouping: self.MealSchedule.list, by: { $0.house
-                    })
+                    self.Houses = Dictionary(grouping: self.DineSchedule.list, by: { $0.house })
                     
                 } catch {
 
@@ -111,3 +112,4 @@ class Store: ObservableObject {
 
 // Create a test store for use with Xcode previews
 let testStore = Store(loadFromRemote: false)
+
